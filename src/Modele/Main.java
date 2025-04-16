@@ -1,9 +1,6 @@
 package Modele;
 
-import Vue.Insertion;
-import Vue.MainMenu;
-import Vue.CreationArbre;
-import Vue.ajoutEnfant;
+import Vue.*;
 
 import javax.swing.*;
 
@@ -37,6 +34,9 @@ public class Main {
         JFrame Fen2 = new Insertion();
         JFrame Fen3 = new CreationArbre();
         JFrame Fen4 = new ajoutEnfant();
+        JFrame Fen5 = new ajoutPartenaire();
+        JFrame Fen6 = new ajoutParents();
+
 
         System.out.println("Enfants de "+p1.prenom+" :");
         for(int i = 0; i < p1.getEnfant().size(); i++){
