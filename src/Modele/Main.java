@@ -1,5 +1,10 @@
 package Modele;
 
+import Vue.Insertion;
+import Vue.MainMenu;
+
+import javax.swing.*;
+
 import java.util.Calendar;
 
 public class Main {
@@ -26,10 +31,15 @@ public class Main {
         p1.addUnion(u1);
         p2.addUnion(u1);
 
+        JFrame Fen1 = new MainMenu();
+        JFrame Fen2 = new Insertion();
+
         System.out.println("Enfants de "+p1.prenom+" :");
         for(int i = 0; i < p1.getEnfant().size(); i++){
             System.out.println(p1.getEnfant().get(i).prenom);
         }
+
+
 
 
 
