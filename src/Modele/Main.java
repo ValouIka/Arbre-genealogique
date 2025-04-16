@@ -23,6 +23,15 @@ public class Main {
         p3.setMere(p1);
         p4.setMere(p1);
 
+        p1.addUnion(u1);
+        p2.addUnion(u1);
+
+        System.out.println("Enfants de "+p1.prenom+" :");
+        for(int i = 0; i < p1.getEnfant().size(); i++){
+            System.out.println(p1.getEnfant().get(i).prenom);
+        }
+
+
 
     }
 }

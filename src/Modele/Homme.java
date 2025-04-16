@@ -18,4 +18,12 @@ public class Homme extends Personne {
         enfants.add(p);
     }
 
+    public Vector<Personne> getEnfant(){
+        return enfants;
+    }
+
+    public Vector<Union> getUnion(){
+        return unions;
+    }
+
 }
