@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.util.Calendar;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
         Femme p1 = new Femme("Stephanie", "Canal");
         Homme p2 = new Homme("Boris", "Dauge");
         Homme p3 = new Homme("Baptiste","Dauge");
@@ -31,11 +31,8 @@ public class Main {
         p2.addUnion(u1);
 
         JFrame Fen1 = new MainMenu();
-        JFrame Fen2 = new Insertion();
-        JFrame Fen3 = new CreationArbre();
-        JFrame Fen4 = new ajoutEnfant();
-        JFrame Fen5 = new ajoutPartenaire();
-        JFrame Fen6 = new ajoutParents();
+
+
 
 
         System.out.println("Enfants de "+p1.prenom+" :");

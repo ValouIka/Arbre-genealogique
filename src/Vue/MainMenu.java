@@ -1,5 +1,7 @@
 package Vue;
 
+import Controleur.ControlMainMenu;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -15,7 +17,7 @@ public class MainMenu extends JFrame {
 
     public MainMenu(){
         this.setTitle("Menu principal");
-        this.getContentPane().setLayout(new GridLayout(1,1));
+        this.getContentPane().setLayout(new BorderLayout());
         boutonsMenu.setLayout(new GridLayout(6,1));
         boutonsMenu.add(insertion);
         boutonsMenu.add(affichage);
@@ -23,9 +25,13 @@ public class MainMenu extends JFrame {
         boutonsMenu.add(fratrie);
         boutonsMenu.add(cousins);
         boutonsMenu.add(parente);
-        this.getContentPane().add(boutonsMenu);
+        this.getContentPane().add(BorderLayout.CENTER, boutonsMenu);
+
+        ControlMainMenu c1 = new ControlMainMenu();
+        insertion.addActionListener(c1);
 
         setSize(800,600);
+        setLocationRelativeTo(null);
         this.show();
         setVisible(true);
         this.pack();
