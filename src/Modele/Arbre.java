@@ -4,8 +4,9 @@ import java.util.Vector;
 
 public class Arbre {
     String nom;
-    Vector<Personne> Personnes;
     Personne proprietaire;
+    Vector<Personne> Personnes;
+
 
     public Arbre(String nom){
         this.nom = nom;
