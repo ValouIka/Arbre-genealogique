@@ -1,6 +1,10 @@
 package Vue;
 
+import Controleur.ControlAjoutParents;
 import Modele.Arbre;
+import Modele.Femme;
+import Modele.Homme;
+import Modele.Personne;
 
 import java.awt.*;
 import javax.swing.*;
@@ -11,14 +15,27 @@ public class AjoutParents extends JFrame {
     JLabel personne = new JLabel("Personne à qui ajouter des parents: ");
     JLabel choixPere = new JLabel("Père: ");
     JLabel choixMere = new JLabel("Mere: ");
-    JComboBox listePersonnes = new JComboBox();
-    JComboBox listeHommes = new JComboBox();
-    JComboBox listeFemmes = new JComboBox();
+    JComboBox<Personne> listePersonnes = new JComboBox<>();
+    JComboBox<Homme> listeHommes = new JComboBox<>();
+    JComboBox<Femme> listeFemmes = new JComboBox<>();
+
     JPanel menuChoix = new JPanel();
     JButton validation = new JButton("Valider");
 
     public AjoutParents(Arbre arbre) {
         instanceNb++;
+        if(!arbre.getPersonnes().isEmpty()){
+            for(int i = 0; i<arbre.getPersonnes().size(); i++){
+                Personne p = arbre.getPersonnes().get(i);
+                if(p instanceof Femme) {
+                    listeFemmes.addItem((Femme)p);
+                }
+                else if(p instanceof Homme) {
+                    listeHommes.addItem((Homme)p);
+                }
+                listePersonnes.addItem(p);
+            }
+        }
         this.setTitle("Ajout des parents");
         this.getContentPane().setLayout(new BorderLayout());
         menuChoix.setLayout(new GridLayout(3,2));
@@ -28,6 +45,10 @@ public class AjoutParents extends JFrame {
         menuChoix.add(listeFemmes);
         menuChoix.add(choixPere);
         menuChoix.add(listeHommes);
+
+        ControlAjoutParents c = new ControlAjoutParents(this, (Homme)listeHommes.getSelectedItem(), (Femme)listeFemmes.getSelectedItem(), (Personne)listePersonnes.getSelectedItem());
+        validation.addActionListener(c);
+
         this.getContentPane().add(BorderLayout.CENTER, menuChoix);
         this.getContentPane().add(BorderLayout.SOUTH, validation);
 

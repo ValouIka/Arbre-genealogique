@@ -11,14 +11,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ControlAjoutEnfant implements ActionListener {
-    Arbre arbre;
+
     Personne enfant;
     Personne parent;
     AjoutEnfant VueAjoutEnfant;
 
 
-    public ControlAjoutEnfant(AjoutEnfant VueAjoutEnfant, Arbre arbre, Personne enfant, Personne parent) {
-        this.arbre = arbre;
+    public ControlAjoutEnfant(AjoutEnfant VueAjoutEnfant, Personne enfant, Personne parent) {
         this.enfant = enfant;
         this.parent = parent;
         this.VueAjoutEnfant = VueAjoutEnfant;

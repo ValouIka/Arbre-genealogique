@@ -11,8 +11,8 @@ import javax.swing.border.Border;
 public class AjoutEnfant extends JFrame {
     public static int instanceNb = 0;
 
-    JComboBox listeEnfants = new JComboBox();
-    JComboBox listePersonnes = new JComboBox();
+    JComboBox<Personne> listeEnfants = new JComboBox();
+    JComboBox<Personne> listePersonnes = new JComboBox();
     JLabel choixEnfant = new JLabel("Enfant à attribuer: ");
     JLabel choixPersonne = new JLabel("Personne à qui attribuer un enfant: ");
     JPanel menuChoix = new JPanel();
@@ -34,7 +34,7 @@ public class AjoutEnfant extends JFrame {
         menuChoix.add(choixEnfant);
         menuChoix.add(listeEnfants);
 
-        ControlAjoutEnfant c = new ControlAjoutEnfant(this, arbre, (Personne)listeEnfants.getSelectedItem(), (Personne)listePersonnes.getSelectedItem());
+        ControlAjoutEnfant c = new ControlAjoutEnfant(this, (Personne)listeEnfants.getSelectedItem(), (Personne)listePersonnes.getSelectedItem());
         validation.addActionListener(c);
 
         this.getContentPane().add(BorderLayout.CENTER, menuChoix);
