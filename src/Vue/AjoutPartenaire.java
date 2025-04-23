@@ -1,5 +1,7 @@
 package Vue;
 
+import Modele.Arbre;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -13,7 +15,7 @@ public class AjoutPartenaire extends JFrame {
     JPanel menuChoix = new JPanel();
     JButton validation = new JButton("Valider");
 
-    public AjoutPartenaire() {
+    public AjoutPartenaire(Arbre arbre) {
         instanceNb++;
         this.setTitle("Ajouter un partenaire");
         this.getContentPane().setLayout(new BorderLayout());

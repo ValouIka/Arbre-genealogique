@@ -1,5 +1,7 @@
 package Vue;
 
+import Modele.Arbre;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -15,7 +17,7 @@ public class AjoutParents extends JFrame {
     JPanel menuChoix = new JPanel();
     JButton validation = new JButton("Valider");
 
-    public AjoutParents() {
+    public AjoutParents(Arbre arbre) {
         instanceNb++;
         this.setTitle("Ajout des parents");
         this.getContentPane().setLayout(new BorderLayout());

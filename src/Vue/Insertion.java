@@ -1,4 +1,7 @@
 package Vue;
+import Controleur.ControlInsertion;
+import Modele.Arbre;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -27,7 +30,7 @@ public class Insertion extends JFrame{
 
 
 
-    public Insertion(){
+    public Insertion(Arbre arbre){
         instanceNb++;
         this.setTitle("Insertion");
         this.getContentPane().setLayout(new BorderLayout());
@@ -36,6 +39,9 @@ public class Insertion extends JFrame{
         ButtonGroup grp = new ButtonGroup();
         grp.add(female); female.setSelected(true);
         grp.add(male);
+        male.setActionCommand("M");
+        female.setActionCommand("F");
+
         sexePanel.setLayout(new GridLayout(1,2));
         sexePanel.add(female);
         sexePanel.add(male);
@@ -51,8 +57,8 @@ public class Insertion extends JFrame{
         creationPanel.add(d_mort);
         creationPanel.add(c_mort);
 
-
-
+        ControlInsertion c = new ControlInsertion(this,arbre,grp.getSelection().getActionCommand(),c_nom,c_prenom,c_naiss,c_mort);
+        validation.addActionListener(c);
 
         this.getContentPane().add(BorderLayout.CENTER,creationPanel);
         this.getContentPane().add(BorderLayout.SOUTH, validation);

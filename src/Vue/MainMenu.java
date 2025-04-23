@@ -1,6 +1,7 @@
 package Vue;
 
 import Controleur.ControlMainMenu;
+import Modele.Arbre;
 
 import java.awt.*;
 import javax.swing.*;
@@ -15,7 +16,7 @@ public class MainMenu extends JFrame {
     JPanel boutonsMenu = new JPanel();
 
 
-    public MainMenu(){
+    public MainMenu(Arbre arbre){
         this.setTitle("Menu principal");
         this.getContentPane().setLayout(new BorderLayout());
         boutonsMenu.setLayout(new GridLayout(6,1));
@@ -27,7 +28,7 @@ public class MainMenu extends JFrame {
         boutonsMenu.add(parente);
         this.getContentPane().add(BorderLayout.CENTER, boutonsMenu);
 
-        ControlMainMenu c1 = new ControlMainMenu();
+        ControlMainMenu c1 = new ControlMainMenu(arbre);
         insertion.addActionListener(c1);
 
         setSize(800,600);

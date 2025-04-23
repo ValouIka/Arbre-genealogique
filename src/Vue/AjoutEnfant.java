@@ -1,4 +1,7 @@
 package Vue;
+import Modele.Arbre;
+import Modele.Personne;
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -14,8 +17,14 @@ public class AjoutEnfant extends JFrame {
     JPanel menuChoix = new JPanel();
     JButton validation = new JButton("Valider");
 
-    public AjoutEnfant(){
+    public AjoutEnfant(Arbre arbre){
         instanceNb++;
+        if(!arbre.getPersonnes().isEmpty()){
+            for(int i = 0; i<arbre.getPersonnes().size(); i++){
+                listeEnfants.addItem(arbre.getPersonnes().elementAt(i).prenom);
+                listePersonnes.addItem(arbre.getPersonnes().elementAt(i).prenom);
+            }
+        }
         this.setTitle("Ajouter un enfant");
         this.getContentPane().setLayout(new BorderLayout());
         menuChoix.setLayout(new GridLayout(2,2));
@@ -23,6 +32,8 @@ public class AjoutEnfant extends JFrame {
         menuChoix.add(listePersonnes);
         menuChoix.add(choixEnfant);
         menuChoix.add(listeEnfants);
+
+
 
         this.getContentPane().add(BorderLayout.CENTER, menuChoix);
         this.getContentPane().add(BorderLayout.SOUTH, validation);

@@ -1,5 +1,6 @@
 package Vue;
 import Controleur.ControlCreationArbre;
+import Modele.Arbre;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -15,7 +16,7 @@ public class CreationArbre extends JFrame {
     JButton addPartenaire = new JButton("Ajouter un partenaire à une personne");
     JPanel boutons = new JPanel();
 
-    public CreationArbre(){
+    public CreationArbre(Arbre arbre){
         instanceNb++;
         this.setTitle("Creation Arbre");
         this.getContentPane().setLayout(new GridLayout(1,1));
@@ -26,7 +27,7 @@ public class CreationArbre extends JFrame {
         boutons.add(addPartenaire);
         this.getContentPane().add(boutons);
 
-        ControlCreationArbre c = new ControlCreationArbre();
+        ControlCreationArbre c = new ControlCreationArbre(arbre);
         addPersonne.addActionListener(c);
         addEnfant.addActionListener(c);
         addParents.addActionListener(c);
