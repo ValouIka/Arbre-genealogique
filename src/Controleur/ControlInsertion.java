@@ -14,16 +14,17 @@ import java.util.Vector;
 public class ControlInsertion implements ActionListener {
     Arbre arbre;
     String sexe;
+    ButtonGroup grp;
     JTextField nom;
     JTextField prenom;
     JTextField dateDeNaissance;
     JTextField dateDeDeces;
     Insertion VueInsertion;
 
-    public ControlInsertion(Insertion VueInsertion, Arbre arbre, String sexe, JTextField nom, JTextField prenom, JTextField dateDeNaissance, JTextField dateDeDeces) {
+    public ControlInsertion(Insertion VueInsertion, Arbre arbre, ButtonGroup grp, JTextField nom, JTextField prenom, JTextField dateDeNaissance, JTextField dateDeDeces) {
         this.arbre = arbre;
-        this.sexe = sexe;
         this.nom = nom;
+        this.grp = grp;
         this.prenom = prenom;
         this.dateDeNaissance = dateDeNaissance;
         this.dateDeDeces = dateDeDeces;
@@ -37,15 +38,14 @@ public class ControlInsertion implements ActionListener {
         }
 
         if(valider.getText().equals("Valider")) {
+            sexe = grp.getSelection().getActionCommand();
             if(sexe.equals("F")){
                 arbre.ajoutePersonne(new Femme(prenom.getText(), nom.getText()));
             }
-            else{
+            else if(sexe.equals("M")){
                 arbre.ajoutePersonne(new Homme(prenom.getText(), nom.getText()));
             }
             VueInsertion.dispose();
-
-
 
         }
     }

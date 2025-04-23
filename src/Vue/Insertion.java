@@ -57,7 +57,7 @@ public class Insertion extends JFrame{
         creationPanel.add(d_mort);
         creationPanel.add(c_mort);
 
-        ControlInsertion c = new ControlInsertion(this,arbre,grp.getSelection().getActionCommand(),c_nom,c_prenom,c_naiss,c_mort);
+        ControlInsertion c = new ControlInsertion(this,arbre,grp,c_nom,c_prenom,c_naiss,c_mort);
         validation.addActionListener(c);
 
         this.getContentPane().add(BorderLayout.CENTER,creationPanel);
