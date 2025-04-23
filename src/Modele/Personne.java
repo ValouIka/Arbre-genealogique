@@ -16,6 +16,11 @@ public class Personne {
         this.nom = nom;
     }
 
+    public String toString(){
+        return prenom + " " + nom;
+    }
+
+
     public void setMere(Femme mere){
         this.mere = mere;
     }

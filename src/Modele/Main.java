@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args)  {
         Arbre arbre = new Arbre("default");
 
-        JFrame Fen1 = new MainMenu(arbre);
+        JFrame Fen = new MainMenu(arbre);
 
 
 

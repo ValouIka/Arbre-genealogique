@@ -17,7 +17,6 @@ public class ControlCreationArbre implements ActionListener {
         this.arbre = arbre;
     }
 
-
     public void actionPerformed(ActionEvent e) {
         JButton temp = null;
         if(e.getSource() instanceof JButton) {

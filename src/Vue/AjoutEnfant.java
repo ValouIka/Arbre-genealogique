@@ -1,4 +1,5 @@
 package Vue;
+import Controleur.ControlAjoutEnfant;
 import Modele.Arbre;
 import Modele.Personne;
 
@@ -21,8 +22,8 @@ public class AjoutEnfant extends JFrame {
         instanceNb++;
         if(!arbre.getPersonnes().isEmpty()){
             for(int i = 0; i<arbre.getPersonnes().size(); i++){
-                listeEnfants.addItem(arbre.getPersonnes().elementAt(i).prenom);
-                listePersonnes.addItem(arbre.getPersonnes().elementAt(i).prenom);
+                listeEnfants.addItem(arbre.getPersonnes().elementAt(i));
+                listePersonnes.addItem(arbre.getPersonnes().elementAt(i));
             }
         }
         this.setTitle("Ajouter un enfant");
@@ -33,7 +34,8 @@ public class AjoutEnfant extends JFrame {
         menuChoix.add(choixEnfant);
         menuChoix.add(listeEnfants);
 
-
+        ControlAjoutEnfant c = new ControlAjoutEnfant(this, arbre, (Personne)listeEnfants.getSelectedItem(), (Personne)listePersonnes.getSelectedItem());
+        validation.addActionListener(c);
 
         this.getContentPane().add(BorderLayout.CENTER, menuChoix);
         this.getContentPane().add(BorderLayout.SOUTH, validation);
