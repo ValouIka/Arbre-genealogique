@@ -1,9 +1,6 @@
 package Controleur;
 
-import Modele.Arbre;
-import Modele.Femme;
-import Modele.Homme;
-import Modele.Personne;
+import Modele.*;
 import Vue.AjoutParents;
 
 import javax.swing.*;
@@ -37,6 +34,11 @@ public class ControlAjoutParents implements ActionListener {
             }
             if(mere != null) {
                 mere.addEnfant(enfant);
+            }
+            if(mere != null && pere != null) {
+                Union union = new Union(mere, pere);
+                mere.addUnion(union);
+                pere.addUnion(union);
             }
             VueAjoutParents.dispose();
         }
