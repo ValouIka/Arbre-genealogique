@@ -2,7 +2,7 @@ package Modele;
 
 import java.util.*;
 
-public class Union {
+public class    Union {
     private Calendar d_debut;
     private Calendar d_fin;
     private Femme fpartenaire;

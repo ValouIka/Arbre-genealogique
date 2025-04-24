@@ -3,6 +3,7 @@ package Controleur;
 import Modele.Femme;
 import Modele.Homme;
 import Modele.Personne;
+import Modele.Union;
 import Vue.AjoutPartenaire;
 
 import javax.swing.*;
@@ -11,13 +12,13 @@ import java.awt.event.ActionListener;
 
 public class ControlAjoutPartenaire implements ActionListener {
     AjoutPartenaire VueAjoutPartenaire;
-    Personne p1;
-    Personne p2;
+    Femme Fp;
+    Homme Hp;
 
-    public ControlAjoutPartenaire(AjoutPartenaire VueAjoutPartenaire, Personne p1, Personne p2) {
+    public ControlAjoutPartenaire(AjoutPartenaire VueAjoutPartenaire, Femme Fp, Homme Hp) {
         this.VueAjoutPartenaire = VueAjoutPartenaire;
-        this.p1 = p1;
-        this.p2 = p2;
+        this.Fp = Fp;
+        this.Hp = Hp;
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -27,9 +28,11 @@ public class ControlAjoutPartenaire implements ActionListener {
         }
 
         if(temp.getText().equals("Valider")){
-            if(p1 instanceof Femme) {
-
-            }
+            Union union = new Union(Fp, Hp);
+            Fp.addUnion(union);
+            Hp.addUnion(union);
+            VueAjoutPartenaire.dispose();
         }
+
     }
 }

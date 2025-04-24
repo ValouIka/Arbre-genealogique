@@ -32,9 +32,11 @@ public class ControlAjoutEnfant implements ActionListener {
         if(temp.getText().equals("Valider")) {
             if(parent instanceof Femme) {
                 ((Femme) parent).addEnfant(enfant);
+                enfant.setMere((Femme)parent);
             }
             else if(parent instanceof Homme) {
                 ((Homme) parent).addEnfant(enfant);
+                enfant.setPere((Homme)parent);
             }
             VueAjoutEnfant.dispose();
         }

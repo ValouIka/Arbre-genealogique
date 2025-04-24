@@ -32,7 +32,14 @@ public class ControlAjoutParents implements ActionListener {
         if(temp.getText().equals("Valider")) {
             enfant.setMere(mere);
             enfant.setPere(pere);
+            if(pere != null) {
+                pere.addEnfant(enfant);
+            }
+            if(mere != null) {
+                mere.addEnfant(enfant);
+            }
+            VueAjoutParents.dispose();
         }
-        VueAjoutParents.dispose();
+
     }
 }
