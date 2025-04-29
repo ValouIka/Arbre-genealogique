@@ -18,7 +18,7 @@ public class Homme extends Personne {
         enfants.add(p);
     }
 
-    public Vector<Personne> getEnfant(){
+    public Vector<Personne> getEnfants(){
         return enfants;
     }
 
