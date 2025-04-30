@@ -84,7 +84,7 @@ public class Arbre extends Observable {
 
 
     /*
-    public String lienParente(){
+    public String lienParente(Personne a, Personne b){
 
     }
 
