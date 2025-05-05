@@ -6,8 +6,8 @@ public class Femme extends Personne {
     private Vector<Union> unions = new Vector<Union>();
     private Vector<Personne> enfants = new Vector<Personne>();
 
-    public Femme(String prenom, String nom) {
-        super(prenom, nom);
+    public Femme(String prenom, String nom, String d_naissance, String d_mort) {
+        super(prenom, nom, d_naissance, d_mort);
     }
 
     public void addUnion(Union u){

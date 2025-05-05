@@ -81,6 +81,19 @@ public class Arbre extends Observable {
         return cousins;
     }
 
+    public Vector<Personne> chercherAncetres(Personne p, Vector<Personne> ancetres){
+        if(ancetres == null){
+            ancetres = new Vector<>();
+        }
+        if(p.getMere() != null){
+            chercherAncetres(p.getMere(), ancetres);
+        }
+        ancetres.add(p);
+        if(p.getPere() != null){
+            chercherAncetres(p.getPere(), ancetres);
+        }
+        return ancetres;
+    }
 
 
     /*

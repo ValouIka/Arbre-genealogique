@@ -40,10 +40,10 @@ public class ControlInsertion implements ActionListener {
         if(valider.getText().equals("Valider")) {
             sexe = grp.getSelection().getActionCommand();
             if(sexe.equals("F")){
-                arbre.ajoutePersonne(new Femme(prenom.getText(), nom.getText()));
+                arbre.ajoutePersonne(new Femme(prenom.getText(), nom.getText(), dateDeNaissance.getText(), dateDeDeces.getText()));
             }
             else if(sexe.equals("M")){
-                arbre.ajoutePersonne(new Homme(prenom.getText(), nom.getText()));
+                arbre.ajoutePersonne(new Homme(prenom.getText(), nom.getText(), dateDeNaissance.getText(), dateDeDeces.getText()));
             }
             VueInsertion.dispose();
 

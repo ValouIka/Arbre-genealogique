@@ -2,9 +2,9 @@ package Modele;
 
 import java.util.*;
 
-public class    Union {
-    private Calendar d_debut;
-    private Calendar d_fin;
+public class Union {
+    private String d_debut;
+    private String d_fin;
     private Femme fpartenaire;
     private Homme hpartenaire;
 
@@ -14,14 +14,12 @@ public class    Union {
         this.hpartenaire = hpartenaire;
     }
 
-    public void setDebut(int jour, int mois, int annee){
-        d_debut = Calendar.getInstance();
-        d_debut.set(jour, mois, annee);
+    public void setDebut(String date){
+        d_debut = date;
     }
 
-    public void setFin(int jour, int mois, int annee){
-        d_fin = Calendar.getInstance();
-        d_fin.set(jour, mois, annee);
+    public void setFin(String date){
+        d_fin = date;
     }
     
     public Femme getFemme(){

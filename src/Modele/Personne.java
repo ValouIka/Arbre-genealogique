@@ -5,15 +5,17 @@ import java.util.*;
 public class Personne {
     public String nom;
     public String prenom;
-    private Calendar d_naissance;
-    private Calendar d_mort;
+    private String d_naissance;
+    private String d_mort;
     private Femme mere;
     private Homme pere;
     
 
-    public Personne(String prenom, String nom) {
+    public Personne(String prenom, String nom, String d_naissance, String d_mort) {
         this.prenom = prenom;
         this.nom = nom;
+        this.d_naissance = d_naissance;
+        this.d_mort = d_mort;
     }
 
     public String toString(){
@@ -37,13 +39,7 @@ public class Personne {
         return pere;
     }
 
-    public void setDateNaissance(int jour, int mois, int annee){
-        d_naissance.set(annee, mois, jour);
-    }
 
-    public void setDateMort(int jour, int mois, int annee){
-        d_mort.set(annee, mois, jour);
-    }
 
 
 
