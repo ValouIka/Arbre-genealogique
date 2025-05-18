@@ -108,32 +108,28 @@ public class Arbre {
 
 
 
-    static public Vector<Personne> chercherAncetres(Personne p) {
+    static public Vector<Personne> chercherAncetres(Personne p){
         Vector<Personne> ancetres = new Vector<>();
         Vector<Personne> visited = new Vector<>(); //Personnes déjà parcourues
         chercherAncetresRecursif(p, ancetres, visited);
         return ancetres;
     }
 
-    private static void chercherAncetresRecursif(
-            Personne current,
-            Vector<Personne> ancetres,
-            Vector<Personne> visited
-    ) {
+    private static void chercherAncetresRecursif(Personne current, Vector<Personne> ancetres, Vector<Personne> visited){
         //Vérification initiale
-        if (current == null || visited.contains(current)) {
+        if (current == null || visited.contains(current)){
             return;
         }
         visited.add(current);
 
         //Ancetres côté mere
-        if (current.getMere() != null) {
+        if (current.getMere() != null){
             ancetres.add(current.getMere());
             chercherAncetresRecursif(current.getMere(), ancetres, visited);
         }
 
         //Ancetres côté pere
-        if (current.getPere() != null) {
+        if (current.getPere() != null){
             ancetres.add(current.getPere());
             chercherAncetresRecursif(current.getPere(), ancetres, visited);
         }
