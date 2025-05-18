@@ -12,11 +12,14 @@ public class ControlAjoutParents implements ActionListener {
     Femme mere;
     Personne enfant;
     AjoutParents VueAjoutParents;
+    JComboBox<Personne> boxEnfant;
+    JComboBox<Femme> boxMere;
+    JComboBox<Homme> boxPere;
 
-    public ControlAjoutParents(AjoutParents VueAjoutParents, Homme pere, Femme mere, Personne enfant) {
-        this.pere = pere;
-        this.mere = mere;
-        this.enfant = enfant;
+    public ControlAjoutParents(AjoutParents VueAjoutParents, JComboBox<Personne> boxEnfant, JComboBox<Femme> boxMere, JComboBox<Homme> boxPere) {
+        this.boxEnfant = boxEnfant;
+        this.boxMere = boxMere;
+        this.boxPere = boxPere;
         this.VueAjoutParents = VueAjoutParents;
     }
 
@@ -27,6 +30,10 @@ public class ControlAjoutParents implements ActionListener {
         }
 
         if(temp.getText().equals("Valider")) {
+            enfant = (Personne)boxEnfant.getSelectedItem();
+            mere = (Femme)boxMere.getSelectedItem();
+            pere = (Homme)boxPere.getSelectedItem();
+
             enfant.setMere(mere);
             enfant.setPere(pere);
             if(pere != null) {

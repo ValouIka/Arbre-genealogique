@@ -1,8 +1,7 @@
 package Controleur;
 
 import Modele.Arbre;
-import Vue.CreationArbre;
-import Vue.Insertion;
+import Vue.*;
 
 import java.awt.event.*;
 import javax.swing.*;
@@ -22,6 +21,15 @@ public class ControlMainMenu implements ActionListener {
 
         if(temp.getText().equals("Inserer arbre généalogique")){
             JFrame Fen = new CreationArbre(arbre);
+        }
+        if(temp.getText().equals("Afficher les ancetres d'une personne")){
+            JFrame Fen = new AfficherAncetres(arbre);
+        }
+        if(temp.getText().equals("Afficher la fratrie d'une personne")){
+            JFrame Fen = new AfficherFratrie(arbre);
+        }
+        if(temp.getText().equals("Afficher les cousins/cousines d'une personne")){
+            JFrame Fen = new AfficherCousins(arbre);
         }
     }
 }

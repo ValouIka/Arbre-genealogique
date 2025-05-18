@@ -46,7 +46,7 @@ public class AjoutParents extends JFrame {
         menuChoix.add(choixPere);
         menuChoix.add(listeHommes);
 
-        ControlAjoutParents c = new ControlAjoutParents(this, (Homme)listeHommes.getSelectedItem(), (Femme)listeFemmes.getSelectedItem(), (Personne)listePersonnes.getSelectedItem());
+        ControlAjoutParents c = new ControlAjoutParents(this, listePersonnes, listeFemmes, listeHommes);
         validation.addActionListener(c);
 
         this.getContentPane().add(BorderLayout.CENTER, menuChoix);

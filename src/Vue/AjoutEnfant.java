@@ -34,7 +34,7 @@ public class AjoutEnfant extends JFrame {
         menuChoix.add(choixEnfant);
         menuChoix.add(listeEnfants);
 
-        ControlAjoutEnfant c = new ControlAjoutEnfant(this, (Personne)listeEnfants.getSelectedItem(), (Personne)listePersonnes.getSelectedItem());
+        ControlAjoutEnfant c = new ControlAjoutEnfant(this, listeEnfants, listePersonnes);
         validation.addActionListener(c);
 
         this.getContentPane().add(BorderLayout.CENTER, menuChoix);

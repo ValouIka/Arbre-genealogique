@@ -14,11 +14,13 @@ public class ControlAjoutPartenaire implements ActionListener {
     AjoutPartenaire VueAjoutPartenaire;
     Femme Fp;
     Homme Hp;
+    JComboBox<Femme> boxFemme;
+    JComboBox<Homme> boxHomme;
 
-    public ControlAjoutPartenaire(AjoutPartenaire VueAjoutPartenaire, Femme Fp, Homme Hp) {
+    public ControlAjoutPartenaire(AjoutPartenaire VueAjoutPartenaire, JComboBox<Femme> boxFemme, JComboBox<Homme> boxHomme) {
         this.VueAjoutPartenaire = VueAjoutPartenaire;
-        this.Fp = Fp;
-        this.Hp = Hp;
+        this.boxFemme = boxFemme;
+        this.boxHomme = boxHomme;
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -28,6 +30,8 @@ public class ControlAjoutPartenaire implements ActionListener {
         }
 
         if(temp.getText().equals("Valider")){
+            Fp = (Femme)boxFemme.getSelectedItem();
+            Hp = (Homme)boxHomme.getSelectedItem();
             Union union = new Union(Fp, Hp);
             Fp.addUnion(union);
             Hp.addUnion(union);

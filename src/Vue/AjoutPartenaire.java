@@ -40,7 +40,7 @@ public class AjoutPartenaire extends JFrame {
         menuChoix.add(choixHPartenaire);
         menuChoix.add(listeHPartenaire);
 
-        ControlAjoutPartenaire c = new ControlAjoutPartenaire(this, (Femme)listeFPartenaire.getSelectedItem(), (Homme)listeHPartenaire.getSelectedItem());
+        ControlAjoutPartenaire c = new ControlAjoutPartenaire(this, listeFPartenaire, listeHPartenaire);
         validation.addActionListener(c);
 
         this.getContentPane().add(BorderLayout.CENTER, menuChoix);
